@@ -2,51 +2,62 @@
 
 ---
 
-<header class="text-white fixed top-0 left-0 w-full p-8 z-50 bg-gradient-to-r from-zinc-600 to-black shadow-lg">
-  <div x-data="{ showmenu: false }" class="flex flex-row justify-between">
-    <div id="logo" class="font-bold">
-      <a class="hover:opacity-50" href="#hero"
-        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-8">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
-          ></path>
-          <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
-          ></path>
+<header>
+  <div x-data="{ showmenu: false }" class="p-8 fixed lg:fixed w-full z-10 bg-gradient-to-r from-zinc-600 to-black text-white">
+    <div id="navbar" class="flex flex-row justify-between">
+      <div id="logo" class="font-bold">
+        <a href="#hero"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-8 hover:text-zinc-500 hover:transition duration-300"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z"
+            ></path>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z"
+            ></path>
+          </svg>
+        </a>
+      </div>
+      <nav id="desktopmenu" class="hidden lg:block">
+        <ul class="flex flex-row gap-4">
+          <li class="hover:text-zinc-500 hover:transition duration-300"><a href="#info">Fakta</a></li>
+          <li class="hover:text-zinc-500 hover:transition duration-300"><a href="#stock">Stock-fotos</a></li>
+          <li class="hover:text-zinc-500 hover:transition duration-300"><a href="#beroemmelse">Berømmelsen</a></li>
+          <li class="hover:text-zinc-500 hover:transition duration-300"><a href="#skillevej">Skillevejen</a></li>
+          <li class="hover:text-zinc-500 hover:transition duration-300"><a href="#eksperiment">Fotoeksperimenter</a></li>
+          <li class="hover:text-zinc-500 hover:transition duration-300"><a href="#nybegyndelse">En ny begyndelse</a></li>
+        </ul>
+      </nav>
+      <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu"
+        ><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
         </svg>
-      </a>
+      </button>
     </div>
-    <nav id="desktopmenu" class="hidden lg:block">
-      <ul class="flex flex-row gap-4 z-50">
-        <li class="hover:text-zinc-500"><a href="#info">Fakta</a></li>
-        <li class="hover:text-zinc-500"><a href="#stock">Stock-fotos</a></li>
-        <li class="hover:text-zinc-500"><a href="#beroemmelse">Berømmelsen</a></li>
-        <li class="hover:text-zinc-500"><a href="#skillevej">Skillevejen</a></li>
-        <li class="hover:text-zinc-500"><a href="#eksperiment">Fotoeksperimenter</a></li>
-        <li class="hover:text-zinc-500"><a href="#nybegyndelse">En ny begyndelse</a></li>
+    <nav
+      id="mobilmenu"
+      class="flex flex-col content-center pt-4"
+      x-show="showmenu"
+      x-transition=""
+      x-on:click="showmenu = false"
+      x-on:click.outside="showmenu = false"
+      style="display: none;"
+    >
+      <ul>
+        <li class="text-center py-2 border-y-2 hover:text-zinc-500 hover:transition duration-300"><a href="#info">Fakta</a></li>
+        <li class="text-center py-2 border-b-2 hover:text-zinc-500 hover:transition duration-300"><a href="#stock">Stock-fotos</a></li>
+        <li class="text-center py-2 border-b-2 hover:text-zinc-500 hover:transition duration-300"><a href="#beroemmelse">Berømmelsen</a></li>
+        <li class="text-center py-2 border-b-2 hover:text-zinc-50 hover:transition duration-300"><a href="#skillevej">Skillevejen</a></li>
+        <li class="text-center py-2 border-b-2 hover:text-zinc-500 hover:transition duration-300"><a href="#eksperiment">Fotoeksperimenter</a></li>
+        <li class="text-center py-2 hover:text-zinc-500 hover:transition duration-300"><a href="#nybegyndelse">En ny begyndelse</a></li>
       </ul>
     </nav>
-    <button id="burgermenu" class="lg:hidden" x-on:click="showmenu = ! showmenu">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-white">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-      </svg>
-    </button>
   </div>
-  <nav
-    id="mobilmenu"
-    class="flex flex-col content-center pt-4"
-    x-show="showmenu"
-    x-transition=""
-    x-on:click="showmenu = false"
-    x-on:click.outside="showmenu = false"
-    style="display: none;"
-  >
-    <ul>
-      <li class="text-center py-2 border-y-2 hover:text-zinc-500"><a href="#link1">Toppen</a></li>
-      <li class="text-center py-2 border-b-2 hover:text-zinc-500"><a href="#link2">Bogens kapitler</a></li>
-      <li class="text-center py-2 border-b-2 hover:text-zinc-500"><a href="#link3">Anmeldelser</a></li>
-      <li class="text-center py-2 border-b-2 hover:text-zinc-500"><a href="#link4">Billeder fra bogen</a></li>
-    </ul>
-  </nav>
 </header>
