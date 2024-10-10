@@ -50,8 +50,34 @@
     z-index: 10; /* Set this value higher than the z-index of the video container */
   }
 
-  .video-container {
-    /* assuming this is the class for your video container */
-    z-index: 5; /* lower than the progress bar's z-index */
+  .video-container video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translateZ(-1px) scale(2);
+    z-index: -1;
+    filter: brightness(0.5);
+  }
+
+  .text-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .sticky {
+    position: sticky;
+  }
+
+  /* Add a minimum height for each section */
+  .parallax-item {
+    min-height: 400px; /* Adjust this value based on your design */
   }
 }
