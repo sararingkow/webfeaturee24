@@ -37,6 +37,7 @@ import "../styles/tobii.min.css";
       </div>
     </div>
   </section>
+
   <section class="max-w-4xl mx-auto my-28 prose border border-double bg-gray-300 p-8">
     <p>
       Pierre Falcke. Du ved formentligt ikke hvem han er. Men indtil for kort tid siden, så du hans værker et par gange om dagen, hver dag, året
@@ -46,7 +47,7 @@ import "../styles/tobii.min.css";
   </section>
 
   <article id="info" class="p-4 md:p-0">
-    <section class="max-w-3xl mx-auto mt-20 prose" id="manchet">
+    <section class="max-w-3xl mx-auto mt-20 prose pb-12" id="manchet">
       <div class="flex gap-12">
         <div class="w-1/2">
           <a href="pierre.jpeg" class="lightbox">
@@ -62,30 +63,32 @@ import "../styles/tobii.min.css";
       </div>
     </section>
   </article>
-  <section id="stock" class="max-w-4xl mx-auto my-20 prose border border-double bg-gray-300 p-8" id="hvaderstockfotos">
-    <h2 class="text-2xl">Hvad er stock-fotos?</h2>
-    <div class="grid grid-cols-3 gap-4 text-md">
-      <div>
-        <p>
-          Stock-fotos er billeder, der kan købes fra et foto-website. De bruges af aviser, til markedsføring og som indhold på websites. En licens til
-          at bruge et foto koster typisk mellem 10 og 100 kroner, alt afhængig af hvad de skal bruges til.
+
+  <!-- Sticky Parallax Sections -->
+  <section>
+    <div
+      id="stock"
+      class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax1"
+      style="background-image: url('/arbejde.jpg')"
+    >
+      <div class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white bg-opacity-50 backdrop-blur-md">
+        <h2 class="text-2xl font-bold">Hvad er stock-fotos?</h2>
+        <p class="text-xl">
+          Stock-fotos er billeder, der kan købes fra et foto-website. De bruges af aviser, til markedsføring og som indhold på websites.
         </p>
-        <Image src={arbejde} alt="" />
       </div>
-      <div>
-        <p>
-          Stock-fotos bliver ofte kritiseret for at være uden sjæl - det er de der billeder af en læge i hvid kittel med stetoskop om halsen på en
-          meget hvid baggrund eller en meget glad dame fra virksomhedens salgs- eller supportafdeling.
-        </p>
-        <Image src={apoteket} alt="" />
-      </div>
-      <div>
-        <p>
-          Stock-fotos har eksisteret i mange år. Før branchen blev digital, tilbød stock-foto virksomhederne billedmapper, der kunne bestilles fra.
-          Men stock-foto branchen var én af de tidlige til at blive fuldt digitaliseret.
-        </p>
-        <Image src={godtarbejde} alt="" />
-      </div>
+    </div>
+
+    <div class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax2" style="background-image: url('/apoteket.jpg')">
+      <p class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white bg-opacity-50 backdrop-blur-md text-xl">
+        Stock-fotos bliver ofte kritiseret for at være uden sjæl - det er de der billeder af en læge i hvid kittel med stetoskop om halsen.
+      </p>
+    </div>
+
+    <div class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax3" style="background-image: url('/godt-arbejde.jpg')">
+      <p class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white bg-opacity-50 backdrop-blur-md text-xl">
+        Stock-fotos har eksisteret i mange år. Før branchen blev digital, tilbød stock-foto virksomhederne billedmapper, der kunne bestilles fra.
+      </p>
     </div>
   </section>
   <section id="beroemmelse" class="max-w-3xl mx-auto mt-20 p-8 prose bg-gray-200" id="pierresberoemmelse">
@@ -266,4 +269,14 @@ import "../styles/tobii.min.css";
   import { animate, scroll } from "motion";
 
   scroll(animate(".progress-bar", { scaleX: [0, 1] }));
+
+  scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
+    target: document.querySelector(".stickyparallax1"),
+  });
+  scroll(animate(".stickyparallax2", { y: [-300, 0] }), {
+    target: document.querySelector(".stickyparallax2"),
+  });
+  scroll(animate(".stickyparallax3", { y: [-300, 0] }), {
+    target: document.querySelector(".stickyparallax3"),
+  });
 </script>

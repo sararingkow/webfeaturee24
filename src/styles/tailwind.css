@@ -80,4 +80,27 @@
   .parallax-item {
     min-height: 400px; /* Adjust this value based on your design */
   }
+
+  button {
+    background-color: #333333;
+    color: white;
+    padding: 10px 20px;
+    margin: 20px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+  }
+
+  button:hover {
+    background-color: #333333;
+  }
+
+  button:active {
+    transform: scale(0.95);
+  }
+
+  i {
+    margin-left: 7px;
+  }
 }
