@@ -40,7 +40,6 @@
   }
 
   .facts p {
-    text-shadow: 1px 1px #303030;
     border: 1px solid;
     padding: 10px;
     box-shadow: 5px 10px #000000;
@@ -81,26 +80,58 @@
     min-height: 400px; /* Adjust this value based on your design */
   }
 
-  button {
-    background-color: #333333;
-    color: white;
-    padding: 10px 20px;
-    margin: 20px;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    outline: none;
-    border-radius: 5px;
+  .banner {
+    text-shadow: 1px 1px #333333;
   }
 
-  button:hover {
-    background-color: #333333;
+  .eksperiment h2 {
+    text-shadow: 1px 1px #333333;
   }
 
-  button:active {
-    transform: scale(0.95);
+  /* h1 hover effect */
+  #h1,
+  #h2 {
+    animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) infinite alternate;
+    animation-duration: 2s;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
   }
 
-  i {
-    margin-left: 7px;
+  #h1:hover,
+  #h2:hover {
+    animation-play-state: paused;
+    transition: all 0.5s ease-in-out;
+    color: #0ea5e9;
+  }
+
+  @keyframes shake {
+    10%,
+    90% {
+      transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+      transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+      transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+      transform: translate3d(4px, 0, 0);
+    }
+  }
+
+  /*cursor*/
+  #h1,
+  #h2,
+  a {
+    @apply cursor-handcursor;
   }
 }

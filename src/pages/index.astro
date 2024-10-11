@@ -12,6 +12,8 @@ import smena from "../assets/images/lomo-smena-17.jpg";
 import overouticm from "../assets/images/over-out-icm.jpeg";
 import pierre from "../assets/images/pierre.jpeg";
 import tyndfilm from "../assets/images/tynd-film.jpg";
+import lomo from "../assets/images/canon-eos-300-gammel-film.jpg";
+import lomo2 from "../assets/images/lomo-smena.jpg";
 import "../styles/tobii.min.css";
 ---
 
@@ -22,48 +24,74 @@ import "../styles/tobii.min.css";
   ogdescription="En kort artikel om Pierre Falcke"
 >
   <div class="progress-bar h-4 fixed w-full bg-gradient-to-r from-blue-500 to-blue-300 left-0 origin-top-left top-0 right-0"></div>
+  <section id="lydeffekter" class="" x-data>
+    <audio x-ref="trykforatafspillelyd">
+      <source src="/bells.mp3" type="audio/mpeg" />
+    </audio>
+    <section id="hero" class="video-container w-screen overflow-hidden z-0" id="hero-section">
+      <div class="text-center w-full">
+        <video class="fixed top-0 left-0 w-full h-full object-cover -z-10" autoplay muted loop>
+          <source src="pierre-falcke-video.mp4" type="video/mp4" />
+        </video>
 
-  <section id="hero" class="video-container w-screen overflow-hidden z-0" id="hero-section">
-    <div class="text-center w-full">
-      <video class="fixed top-0 left-0 w-full h-full object-cover -z-10" autoplay muted loop>
-        <source src="pierre-falcke-video.mp4" type="video/mp4" />
-      </video>
-
-      <!-- Text overlay div -->
-      <div class="flex flex-col items-center justify-center text-white p-72">
-        <hr class="border-white w-1/2 pb-16" />
-        <h1 class="text-5xl md:text-8xl font-bold pb-16">Uperfekt er perfekt</h1>
-        <hr class="border-white w-1/2" />
+        <!-- Text overlay div -->
+        <div class="flex flex-col items-center justify-center text-white p-80">
+          <h1 id="h1" class="cursor-handcursor text-5xl md:text-8xl font-bold pb-16" @click="$refs.trykforatafspillelyd.play()">
+            Uperfekt er perfekt
+          </h1>
+          <h2 id="h2" class="cursor-handcursor text-2xl md:text-4xl">En artikel om Pierre Falcke</h2>
+        </div>
       </div>
-    </div>
+    </section>
   </section>
 
-  <section class="max-w-4xl mx-auto my-28 prose border border-double bg-gray-300 p-8">
-    <p>
-      Pierre Falcke. Du ved formentligt ikke hvem han er. Men indtil for kort tid siden, så du hans værker et par gange om dagen, hver dag, året
-      rundt. Pierre Falcke var en af verdens bedst sælgende stock-fotografer, og han solgte over 2 millioner fotos om året. Men Pierre kunne ikke
-      drømme om at bruge sine egne fotos - faktisk kan han ikke fordrage sit eget arbejde.
-    </p>
-  </section>
-
-  <article id="info" class="p-4 md:p-0">
-    <section class="max-w-3xl mx-auto mt-20 prose pb-12" id="manchet">
+  <article id="info" class="p-4 md:p-0 bg">
+    <section class="max-w-3xl mx-auto m-28 prose p-8 bg-gray-200" id="manchet">
       <div class="flex gap-12">
-        <div class="w-1/2">
-          <a href="pierre.jpeg" class="lightbox">
-            <Image src={pierre} alt="" class="my-0 w-full" />
+        <div class="group w-2/3">
+          <a href="pierre.jpeg" class="lightbox cursor-handcursor">
+            <Image
+              src={pierre}
+              alt=""
+              class="image my-0 w-full transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 group-hover:scale-110"
+            />
             <figcaption>Pierre Falcke, selvportræt</figcaption>
           </a>
         </div>
-        <div class="facts w-1/2">
-          <p class="text-lg italic text-left bg-[#BBB0C0] p-4 text-white">Pierre sælger 2 millioner fotos om året</p>
-          <p class="text-lg italic text-left bg-[#998DA0] p-4 text-white">Det svarer til én fotolicens hvert 16. sekund</p>
-          <p class="text-lg italic text-left bg-[#63585E] p-4 text-white">Du ser hans fotos ca. 2 gange om dagen</p>
+        <div class="w-2/3">
+          <p class="cursor-handcursor mb-8 text-md">
+            Pierre Falcke. Du ved formentligt ikke hvem han er. Men indtil for kort tid siden, så du hans værker et par gange om dagen, hver dag, året
+            rundt. Pierre Falcke var en af verdens bedst sælgende stock-fotografer, og han solgte over 2 millioner fotos om året. Men Pierre kunne
+            ikke drømme om at bruge sine egne fotos - faktisk kan han ikke fordrage sit eget arbejde.
+          </p>
         </div>
       </div>
     </section>
   </article>
-
+  <section class="banner whitespace-nowrap overflow-x-hidden bg-gradient-to-r from-blue-300 to-blue-500 text-white py-4 z-10">
+    <div class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-6">
+      <span> Pierre sælger 2 millioner fotos om året</span>
+      <span>Det svarer til én fotolicens hvert 16. sekund</span>
+      <span>Du ser hans fotos ca. 2 gange om dagen</span>
+      <span>Pierre sælger 2 millioner fotos om året</span>
+      <span>Det svarer til én fotolicens hvert 16. sekund</span>
+      <span>Du ser hans fotos ca. 2 gange om dagen</span>
+      <span>Pierre sælger 2 millioner fotos om året</span>
+      <span>Det svarer til én fotolicens hvert 16. sekund</span>
+      <span>Du ser hans fotos ca. 2 gange om dagen</span>
+    </div>
+    <div class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-6" aria-hidden="true">
+      <span> Pierre sælger 2 millioner fotos om året</span>
+      <span>Det svarer til én fotolicens hvert 16. sekund</span>
+      <span>Du ser hans fotos ca. 2 gange om dagen</span>
+      <span>Pierre sælger 2 millioner fotos om året</span>
+      <span>Det svarer til én fotolicens hvert 16. sekund</span>
+      <span>Du ser hans fotos ca. 2 gange om dagen</span>
+      <span>Pierre sælger 2 millioner fotos om året</span>
+      <span>Det svarer til én fotolicens hvert 16. sekund</span>
+      <span>Du ser hans fotos ca. 2 gange om dagen</span>
+    </div>
+  </section>
   <!-- Sticky Parallax Sections -->
   <section>
     <div
@@ -71,7 +99,9 @@ import "../styles/tobii.min.css";
       class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax1"
       style="background-image: url('/arbejde.jpg')"
     >
-      <div class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white bg-opacity-50 backdrop-blur-md">
+      <div
+        class="cursor-handcursor w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md"
+      >
         <h2 class="text-2xl font-bold">Hvad er stock-fotos?</h2>
         <p class="text-xl">
           Stock-fotos er billeder, der kan købes fra et foto-website. De bruges af aviser, til markedsføring og som indhold på websites.
@@ -79,19 +109,29 @@ import "../styles/tobii.min.css";
       </div>
     </div>
 
-    <div class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax2" style="background-image: url('/apoteket.jpg')">
-      <p class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white bg-opacity-50 backdrop-blur-md text-xl">
+    <div
+      class="cursor-handcursor flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax2"
+      style="background-image: url('/apoteket.jpg')"
+    >
+      <p
+        class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md text-xl"
+      >
         Stock-fotos bliver ofte kritiseret for at være uden sjæl - det er de der billeder af en læge i hvid kittel med stetoskop om halsen.
       </p>
     </div>
 
-    <div class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax3" style="background-image: url('/godt-arbejde.jpg')">
-      <p class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white bg-opacity-50 backdrop-blur-md text-xl">
+    <div
+      class="cursor-handcursor flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax3"
+      style="background-image: url('/godt-arbejde.jpg')"
+    >
+      <p
+        class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md text-xl"
+      >
         Stock-fotos har eksisteret i mange år. Før branchen blev digital, tilbød stock-foto virksomhederne billedmapper, der kunne bestilles fra.
       </p>
     </div>
   </section>
-  <section id="beroemmelse" class="max-w-3xl mx-auto mt-20 p-8 prose bg-gray-200" id="pierresberoemmelse">
+  <section id="beroemmelse" class="max-w-3xl mx-auto mt-28 p-8 prose bg-gray-200" id="pierresberoemmelse">
     <h2 class="text-4xl">Pierres berømmelse</h2>
     <p>
       Pierres interesse for foto startede som ganske ung - som 10-årig fik han sin fars gamle Rollei-kamera, og begyndte at skyde løs. Det var før den
@@ -116,8 +156,8 @@ import "../styles/tobii.min.css";
       studiet på DMJX.
     </p>
   </section>
-  <section id="skillevej">
-    <div class="max-w-3xl mx-auto mt-20 prose bg-gray-200 p-8">
+  <section id="skillevej" class="max-w-3xl mx-auto mt-28 p-8 prose bg-gray-200">
+    <div class="max-w-3xl mx-auto prose">
       <h2 class="text-4xl">En skillevej</h2>
       <p>
         Pierre tjente godt det følgende årti. Men stille og roligt begyndte billederne også at give ham kvalme. Han kunne ikke holde sit eget arbejde
@@ -132,64 +172,68 @@ import "../styles/tobii.min.css";
     <div class="grid grid-cols-2 gap-4 max-w-4xl mx-auto my-8 items-center prose">
       <div>
         <a href="glitch.jpg" class="lightbox">
-          <Image src={glitch} alt="" class="my-0" />
+          <Image src={glitch} alt="" class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300" />
           <figcaption>Glitch kunst</figcaption>
         </a>
       </div>
       <div>
         <a href="lomo-smena-17.jpg" class="lightbox">
-          <Image src={smena} alt="" class="my-0" />
+          <Image src={smena} alt="" class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300" />
           <figcaption>Dobbelteksponering med Smena</figcaption>
         </a>
       </div>
     </div>
-    <div class="max-w-3xl mx-auto prose bg-gray-200 p-8">
+    <div class="max-w-3xl mx-auto prose">
       <p>
         Pierre tog det endda så vidt at han ikke kun droppede at tage stock-fotos. Han fjernede også alle stock-fotos fra de tjenester, han solgte
         sine fotos hos. Han gik fra at være en god forretningsdrivende til at blive en vaskeægte boheme-type på rekordtid.
       </p>
     </div>
   </section>
-  <section id="eksperiment" class="max-w-5xl mx-auto my-20 prose bg-gray-200 p-8" id="fotoeksperimenter">
-    <h2 class="text-2xl">Fotoeksperimenter</h2>
-    <div class="grid grid-cols-3 gap-4">
-      <div>
-        <h3 class="text-xl">Analog fotografering</h3>
-        <p>
-          Fotografering med gode, gammeldags filmruller. Analog fotografering stiger for tiden i popularitet, specielt blandt unge, og prisen på
-          filmruller og vintage-kameraer skyder i vejret. Mange fotografer synes at film-fotografering er mere ægte har mere “sjæl.” Analog
-          fotografering er langsommmere, hvert enkelt billede koster penge, og man bliver nødt til at overveje motiv og lys grundigere før der skydes
-          - tænk før du trykker.
-        </p>
-        <p>
-          Analog fotografering kan gå galt mange steder i processen, og det giver også mulighed for at eksperimentere med “det uperfekte og
-          uforudsigelige i processen.” Man kan f.eks. skyde på for gamle filmruller, arbejde med forskellige teknikker som “lens whacking” og
-          filtre/ting foran objektivet, og man kan pille ved de kemiske processer under fremkaldelse af filmen.
-        </p>
-      </div>
-      <div>
-        <h3 class="text-xl">Glitch art</h3>
-        <p>
-          Når der sker en teknisk fejl i et medie/en kommunikationskanal kaldes det en glitch. Glitch art går ud på at dyrke fejlene for at skabe
-          kunst. En meget typisk glitch er små analoge eller digitale fejl i farvegengivelsen af billeder.
-        </p>
-        <p></p>
-      </div>
-      <div>
-        <h3 class="text-xl">Lomografi</h3>
-        <p>
-          Et lomografi er egentlig bare et fotografi skudt uden videre omtanke, og med noget foto-udstyr af ret alternativ kvalitet. Lomografier
-          skydes ofte på gode, gammeldags filmruller, men kan også skyde digitalt.
-        </p>
-        <p>
-          Det kan måske lyde lidt anti-fotograf-agtigt. Men en del foto-entusiaster dyrker den slags, og ser det som en foto-genre eller endda en
-          livsstil.
-        </p>
-      </div>
+  <section id="eksperiment" class="max-w-3xl mx-auto my-28 prose p-8 text-black" id="fotoeksperimenter">
+    <h2 class="eksperiment text-4xl text-white">Fotoeksperimenter</h2>
+    <div class="overflow-clip">
+      <section id="horisontalscrollsection" class="h-[200vw]">
+        <ul id="horisontalliste" class="list-none flex sticky top-[10vh]">
+          <li class="pl-0 flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+            <figure class="flex flex-col max-w-[700px]">
+              <h3 class="text-xl text-black bg-gray-200 py-3 px-8">Analog fotografering</h3>
+              <p class="bg-gray-200 py-3 px-8">
+                Fotografering med gode, gammeldags filmruller. Analog fotografering stiger for tiden i popularitet, specielt blandt unge, og prisen på
+                filmruller og vintage-kameraer skyder i vejret. Mange fotografer synes at film-fotografering er mere ægte har mere “sjæl.” Analog
+                fotografering er langsommmere, hvert enkelt billede koster penge, og man bliver nødt til at overveje motiv og lys grundigere før der
+                skydes - tænk før du trykker.<br />Analog fotografering kan gå galt mange steder i processen, og det giver også mulighed for at
+                eksperimentere med “det uperfekte og uforudsigelige i processen.” Man kan f.eks. skyde på for gamle filmruller, arbejde med
+                forskellige teknikker som “lens whacking” og filtre/ting foran objektivet, og man kan pille ved de kemiske processer under
+                fremkaldelse af filmen.
+              </p>
+            </figure>
+          </li>
+          <li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+            <figure class="flex flex-col max-w-[700px]">
+              <h3 class="text-xl text-black bg-gray-200 py-3 px-8">Glitch art</h3>
+              <p class="bg-gray-200 py-3 px-8">
+                Når der sker en teknisk fejl i et medie/en kommunikationskanal kaldes det en glitch. <br />Glitch art går ud på at dyrke fejlene for
+                at skabe kunst. En meget typisk glitch er små analoge eller digitale fejl i farvegengivelsen af billeder.
+              </p>
+            </figure>
+            <li class="flex w-[100vw] items-start justify-center flex-col overflow-hidden flex-grow-0 flex-shrink-0 flex-auto">
+              <figure class="flex flex-col max-w-[700px]">
+                <h3 class="text-xl text-black bg-gray-200 py-3 px-8">Lomografi</h3>
+                <p class="bg-gray-200 py-3 px-8">
+                  Et lomografi er egentlig bare et fotografi skudt uden videre omtanke, og med noget foto-udstyr af ret alternativ kvalitet.
+                  Lomografier skydes ofte på gode, gammeldags filmruller, men kan også skyde digitalt. Det kan måske lyde lidt anti-fotograf-agtigt.
+                  Men en del foto-entusiaster dyrker den slags, og ser det som en foto-genre eller endda en livsstil.
+                </p>
+              </figure>
+            </li>
+          </li>
+        </ul>
+      </section>
     </div>
   </section>
   <section id="nybegyndelse">
-    <div class="max-w-3xl mx-auto my-20 prose bg-gray-200 p-8">
+    <div class="max-w-3xl mx-auto my-28 prose bg-gray-200 p-8">
       <h2 class="text-4xl">En ny begyndelse</h2>
       <p>
         Men Pierre er glad for sin beslutning. Indkomsten er lavere nu, men han har stadig lidt penge på kontoen, og studerer nu kunstfotografering på
@@ -199,22 +243,30 @@ import "../styles/tobii.min.css";
           visuelle udtryk. Det uperfekte er perfekt.”</span
         >
       </p>
-    </div>
-    <div class="grid grid-cols-2 gap-4 max-w-4xl mx-auto my-8 items-center prose">
-      <div>
-        <a href="over-out-icm.jpeg" class="lightbox">
-          <Image src={overouticm} alt="" class="my-0" />
-          <figcaption>Overeksponeret og ude af fokus</figcaption>
-        </a>
+      <div class="grid grid-cols-2 gap-4 max-w-4xl mx-auto my-8 items-center prose">
+        <div>
+          <a href="over-out-icm.jpeg" class="lightbox">
+            <Image
+              src={overouticm}
+              alt=""
+              class="image my-0 transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 hover:scale-105"
+            />
+            <figcaption>Overeksponeret og ude af fokus</figcaption>
+          </a>
+        </div>
+        <div>
+          <a href="tynd-film.jpg" class="lightbox">
+            <Image
+              src={tyndfilm}
+              alt=""
+              class="image my-0 transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 hover:scale-105"
+            />
+            <figcaption>Overeksponeret og ude af fokus</figcaption>
+          </a>
+        </div>
       </div>
-      <div>
-        <a href="tynd-film.jpg" class="lightbox">
-          <Image src={tyndfilm} alt="" class="my-0" />
-          <figcaption>Overeksponeret og ude af fokus</figcaption>
-        </a>
-      </div>
     </div>
-    <div class="max-w-3xl mx-auto my-32 prose bg-gray-200 p-8">
+    <div class="max-w-3xl mx-auto my-28 prose bg-gray-200 p-8">
       <p>
         Karrieren begynder også så småt også at gå den rette vej: Pierre er begyndt at sælge fotokunst på nettet, og har udgivet sin første foto-bog
         med titlen “Lidt i fem,” som er en fotografisk odyssé om at slæbe en brandert hjem i de tidlige morgentimer. I forbindelse med udgivelsen af
@@ -227,56 +279,53 @@ import "../styles/tobii.min.css";
       </p>
       <div>
         <a href="lidtifem-pierre-falcke.jpg" class="lightbox">
-          <Image src={lidtifem} alt="" class="my-0" />
+          <Image
+            src={lidtifem}
+            alt=""
+            class="my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 hover:scale-105"
+          />
           <figcaption>Lidt i fem - ny bog af Pierre Falcke</figcaption>
         </a>
       </div>
     </div>
   </section>
-  <section class="whitespace-nowrap overflow-x-hidden backdrop-blur-md text-white py-4 z-10">
-    <div class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-6">
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span> Køb Pierre Falcke's bog nu!</span>
-    </div>
-    <div class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-6" aria-hidden="true">
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span>Køb Pierre Falcke's bog nu!</span>
-      <span> Køb Pierre Falcke's bog nu!</span>
-    </div>
-  </section>
+
+  <script is:inline src="/tobii.min.js"></script>
+  <script defer>
+    const tobii = new Tobii();
+  </script>
+  <script>
+    import { animate, scroll, inView, timeline } from "motion";
+
+    scroll(animate(".progress-bar", { scaleX: [0, 1] }));
+
+    scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
+      target: document.querySelector(".stickyparallax1"),
+    });
+    scroll(animate(".stickyparallax2", { y: [-300, 0] }), {
+      target: document.querySelector(".stickyparallax2"),
+    });
+    scroll(animate(".stickyparallax3", { y: [-300, 0] }), {
+      target: document.querySelector(".stickyparallax3"),
+    });
+
+    /* Horisontal scroll sektion */
+    scroll(
+      animate("#horisontalliste", {
+        transform: ["none", "translateX(-250vw)"],
+      }),
+      { target: document.querySelector("#horisontalscrollsection") }
+    );
+
+    inView("#timelineanimationimage", () => {
+      const timelineanimation = [
+        [".timelineanimation", { opacity: 1 }, { duration: 5 }],
+        [".timelineanimation", { transform: "rotate(360deg)" }, { duration: 3 }],
+        [".timelineanimation", { transform: "scale(1.5)" }, { duration: 0.5 }],
+        [".timelineanimation", { transform: "scale(1)" }, { duration: 1 }],
+        [".timelineanimation", { opacity: 0.3 }, { duration: 5 }],
+      ];
+      timeline(timelineanimation);
+    });
+  </script>
 </MainLayout>
-
-<script is:inline src="/tobii.min.js"></script>
-<script defer>
-  const tobii = new Tobii();
-</script>
-<script>
-  import { animate, scroll } from "motion";
-
-  scroll(animate(".progress-bar", { scaleX: [0, 1] }));
-
-  scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
-    target: document.querySelector(".stickyparallax1"),
-  });
-  scroll(animate(".stickyparallax2", { y: [-300, 0] }), {
-    target: document.querySelector(".stickyparallax2"),
-  });
-  scroll(animate(".stickyparallax3", { y: [-300, 0] }), {
-    target: document.querySelector(".stickyparallax3"),
-  });
-</script>
