@@ -295,7 +295,7 @@ import "../styles/tobii.min.css";
     const tobii = new Tobii();
   </script>
   <script>
-    import { animate, scroll, inView, timeline } from "motion";
+    import { animate, scroll, inView } from "motion";
 
     scroll(animate(".progress-bar", { scaleX: [0, 1] }));
 
@@ -316,16 +316,5 @@ import "../styles/tobii.min.css";
       }),
       { target: document.querySelector("#horisontalscrollsection") }
     );
-
-    inView("#timelineanimationimage", () => {
-      const timelineanimation = [
-        [".timelineanimation", { opacity: 1 }, { duration: 5 }],
-        [".timelineanimation", { transform: "rotate(360deg)" }, { duration: 3 }],
-        [".timelineanimation", { transform: "scale(1.5)" }, { duration: 0.5 }],
-        [".timelineanimation", { transform: "scale(1)" }, { duration: 1 }],
-        [".timelineanimation", { opacity: 0.3 }, { duration: 5 }],
-      ];
-      timeline(timelineanimation);
-    });
   </script>
 </MainLayout>
