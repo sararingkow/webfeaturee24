@@ -24,12 +24,10 @@ import "../styles/tobii.min.css";
   ogdescription="En kort artikel om Pierre Falcke"
 >
   <div class="progress-bar h-4 fixed w-full bg-gradient-to-r from-blue-500 to-blue-300 left-0 origin-top-left top-0 right-0"></div>
-
   <section id="lydeffekter" class="" x-data>
     <audio x-ref="trykforatafspillelyd">
       <source src="/pixel.mp3" type="audio/mpeg" />
     </audio>
-
     <section id="hero" class="video-container w-screen overflow-hidden z-0" id="hero-section">
       <div class="text-center w-full">
         <video class="fixed top-0 left-0 w-full h-full object-cover -z-10" autoplay muted loop>
@@ -37,11 +35,15 @@ import "../styles/tobii.min.css";
         </video>
 
         <!-- Text overlay div -->
-
-        <div class="flex flex-col items-center justify-center text-white p-80">
-          <h1 id="h1" class="text-5xl md:text-8xl font-bold pb-16" @click="$refs.trykforatafspillelyd.play()">Uperfekt er perfekt</h1>
-
-          <h2 id="h2" class="text-2xl md:text-4xl" @click="$refs.trykforatafspillelyd.play()">En artikel om Pierre Falcke</h2>
+        <div class="flex flex-col items-center justify-center text-white p-8 sm:p-80">
+          <h1
+            id="h1"
+            class="cursor-handcursor text-7xl sm:text-8xl font-bold pt-28 sm:pt-12 pb-8 md:pb-12"
+            @click="$refs.trykforatafspillelyd.play()"
+          >
+            Uperfekt er perfekt
+          </h1>
+          <h2 id="h2" class="cursor-handcursor text-2xl sm:text-3xl" @click="$refs.trykforatafspillelyd.play()">En artikel om Pierre Falcke</h2>
         </div>
       </div>
     </section>
@@ -61,7 +63,7 @@ import "../styles/tobii.min.css";
           </a>
         </div>
         <div class="sm:w-2/3">
-          <p class="text-sm sm:text-lg mb-4 sm:mb-8">
+          <p class="text-md sm:text-lg mb-4 sm:mb-8">
             Pierre Falcke. Du ved formentligt ikke hvem han er. Men indtil for kort tid siden, så du hans værker et par gange om dagen, hver dag, året
             rundt. Pierre Falcke var en af verdens bedst sælgende stock-fotografer, og han solgte over 2 millioner fotos om året. Men Pierre kunne
             ikke drømme om at bruge sine egne fotos - faktisk kan han ikke fordrage sit eget arbejde.
