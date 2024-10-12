@@ -23,43 +23,44 @@ import "../styles/tobii.min.css";
   ogtitle="Uperfekt er perfekt"
   ogdescription="En kort artikel om Pierre Falcke"
 >
-  <div class="progress-bar h-4 fixed w-full bg-gradient-to-r from-blue-500 to-blue-300 left-0 origin-top-left top-0 right-0"></div>
-  <section id="lydeffekter" class="" x-data>
+  <div class="progress-bar h-2 sm:h-4 fixed w-full bg-gradient-to-r from-blue-500 to-blue-300 left-0 origin-top-left top-0 right-0"></div>
+
+  <section id="lydeffekter">
     <audio x-ref="trykforatafspillelyd">
       <source src="/bells.mp3" type="audio/mpeg" />
     </audio>
-    <section id="hero" class="video-container w-screen overflow-hidden z-0" id="hero-section">
+
+    <section id="hero" class="video-container w-full overflow-hidden z-0">
       <div class="text-center w-full">
-        <video class="fixed top-0 left-0 w-full h-full object-cover -z-10" autoplay muted loop>
+        <video class="fixed top-0 left-0 w-full h-screen object-cover -z-10" autoplay muted loop>
           <source src="pierre-falcke-video.mp4" type="video/mp4" />
         </video>
 
-        <!-- Text overlay div -->
-        <div class="flex flex-col items-center justify-center text-white p-80">
-          <h1 id="h1" class="cursor-handcursor text-5xl md:text-8xl font-bold pb-16" @click="$refs.trykforatafspillelyd.play()">
+        <div class="flex flex-col items-center justify-center text-white p-8 sm:p-20">
+          <h1 id="h1" class="cursor-pointer text-7xl sm:text-8xl md:text-8xl font-bold pt-32 sm:pt-40" @click="$refs.trykforatafspillelyd.play()">
             Uperfekt er perfekt
           </h1>
-          <h2 id="h2" class="cursor-handcursor text-2xl md:text-4xl">En artikel om Pierre Falcke</h2>
+          <h2 id="h2" class="pt-4 sm:pt-8 text-2xl sm:text-3xl md:text-4xl">En artikel om Pierre Falcke</h2>
         </div>
       </div>
     </section>
   </section>
 
-  <article id="info" class="p-4 md:p-0 bg">
-    <section class="max-w-3xl mx-auto m-28 prose p-8 bg-gray-200" id="manchet">
-      <div class="flex gap-12">
-        <div class="group w-2/3">
-          <a href="pierre.jpeg" class="lightbox cursor-handcursor">
+  <article id="info" class="p-4 bg">
+    <section class="max-w-xl sm:max-w-3xl mx-auto my-8 sm:my-28 prose p-4 sm:p-8 bg-gray-200" id="manchet">
+      <div class="flex flex-col sm:flex-row gap-4 sm:gap-12">
+        <div class="group sm:w-2/3">
+          <a href="pierre.jpeg" class="lightbox">
             <Image
               src={pierre}
               alt=""
-              class="image my-0 w-full transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 group-hover:scale-110"
+              class="w-full transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 group-hover:scale-110"
             />
-            <figcaption>Pierre Falcke, selvportræt</figcaption>
+            <figcaption class="text-center">Pierre Falcke, selvportræt</figcaption>
           </a>
         </div>
-        <div class="w-2/3">
-          <p class="cursor-handcursor mb-8 text-md">
+        <div class="sm:w-2/3">
+          <p class="text-md sm:text-lg mb-4 sm:mb-8">
             Pierre Falcke. Du ved formentligt ikke hvem han er. Men indtil for kort tid siden, så du hans værker et par gange om dagen, hver dag, året
             rundt. Pierre Falcke var en af verdens bedst sælgende stock-fotografer, og han solgte over 2 millioner fotos om året. Men Pierre kunne
             ikke drømme om at bruge sine egne fotos - faktisk kan han ikke fordrage sit eget arbejde.
@@ -68,65 +69,42 @@ import "../styles/tobii.min.css";
       </div>
     </section>
   </article>
-  <section class="banner whitespace-nowrap overflow-x-hidden bg-gradient-to-r from-blue-300 to-blue-500 text-white py-4 z-10">
-    <div class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-6">
-      <span> Pierre sælger 2 millioner fotos om året</span>
-      <span>Det svarer til én fotolicens hvert 16. sekund</span>
-      <span>Du ser hans fotos ca. 2 gange om dagen</span>
-      <span>Pierre sælger 2 millioner fotos om året</span>
-      <span>Det svarer til én fotolicens hvert 16. sekund</span>
-      <span>Du ser hans fotos ca. 2 gange om dagen</span>
-      <span>Pierre sælger 2 millioner fotos om året</span>
-      <span>Det svarer til én fotolicens hvert 16. sekund</span>
-      <span>Du ser hans fotos ca. 2 gange om dagen</span>
-    </div>
-    <div class="inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-6" aria-hidden="true">
-      <span> Pierre sælger 2 millioner fotos om året</span>
-      <span>Det svarer til én fotolicens hvert 16. sekund</span>
-      <span>Du ser hans fotos ca. 2 gange om dagen</span>
-      <span>Pierre sælger 2 millioner fotos om året</span>
-      <span>Det svarer til én fotolicens hvert 16. sekund</span>
-      <span>Du ser hans fotos ca. 2 gange om dagen</span>
+
+  <section class="banner whitespace-nowrap overflow-x-hidden bg-gradient-to-r from-blue-300 to-blue-500 text-white py-2 sm:py-4 z-10">
+    <div class="text-sm sm:text-base inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-3 sm:[&_span]:mx-6">
       <span>Pierre sælger 2 millioner fotos om året</span>
       <span>Det svarer til én fotolicens hvert 16. sekund</span>
       <span>Du ser hans fotos ca. 2 gange om dagen</span>
     </div>
   </section>
+
   <!-- Sticky Parallax Sections -->
   <section>
     <div
       id="stock"
-      class="flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax1"
+      class="flex items-center h-[50vh] sm:h-screen w-full bg-cover bg-center relative sm:sticky top-0"
       style="background-image: url('/arbejde.jpg')"
     >
-      <div
-        class="cursor-handcursor w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md"
-      >
-        <h2 class="text-2xl font-bold">Hvad er stock-fotos?</h2>
-        <p class="text-xl">
-          Stock-fotos er billeder, der kan købes fra et foto-website. De bruges af aviser, til markedsføring og som indhold på websites.
-        </p>
+      <div class="w-3/4 sm:w-1/2 p-4 sm:p-10 bg-white bg-opacity-70 backdrop-blur-md text-base sm:text-lg">
+        <h2 class="text-xl sm:text-2xl font-bold">Hvad er stock-fotos?</h2>
+        <p>Stock-fotos er billeder, der kan købes fra et foto-website. De bruges af aviser, til markedsføring og som indhold på websites.</p>
       </div>
     </div>
 
     <div
-      class="cursor-handcursor flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax2"
+      class="flex items-center h-[50vh] sm:h-screen w-full bg-cover bg-center relative sm:sticky top-0"
       style="background-image: url('/apoteket.jpg')"
     >
-      <p
-        class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md text-xl"
-      >
+      <p class="w-3/4 sm:w-1/2 p-4 sm:p-10 bg-white bg-opacity-70 backdrop-blur-md text-base sm:text-lg">
         Stock-fotos bliver ofte kritiseret for at være uden sjæl - det er de der billeder af en læge i hvid kittel med stetoskop om halsen.
       </p>
     </div>
 
     <div
-      class="cursor-handcursor flex items-center h-screen w-100 bg-cover bg-center sticky top-0 stickyparallax3"
+      class="flex items-center h-[50vh] sm:h-screen w-full bg-cover bg-center relative sm:sticky top-0"
       style="background-image: url('/godt-arbejde.jpg')"
     >
-      <p
-        class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md text-xl"
-      >
+      <p class="w-3/4 sm:w-1/2 p-4 sm:p-10 bg-white bg-opacity-70 backdrop-blur-md text-base sm:text-lg">
         Stock-fotos har eksisteret i mange år. Før branchen blev digital, tilbød stock-foto virksomhederne billedmapper, der kunne bestilles fra.
       </p>
     </div>
@@ -172,13 +150,21 @@ import "../styles/tobii.min.css";
     <div class="grid grid-cols-2 gap-4 max-w-4xl mx-auto my-8 items-center prose">
       <div>
         <a href="glitch.jpg" class="lightbox">
-          <Image src={glitch} alt="" class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300" />
+          <Image
+            src={glitch}
+            alt=""
+            class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 hover:scale-105"
+          />
           <figcaption>Glitch kunst</figcaption>
         </a>
       </div>
       <div>
         <a href="lomo-smena-17.jpg" class="lightbox">
-          <Image src={smena} alt="" class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300" />
+          <Image
+            src={smena}
+            alt=""
+            class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 hover:scale-105"
+          />
           <figcaption>Dobbelteksponering med Smena</figcaption>
         </a>
       </div>
