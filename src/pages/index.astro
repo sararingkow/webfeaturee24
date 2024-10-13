@@ -57,7 +57,8 @@ import "../styles/tobii.min.css";
             <Image
               src={pierre}
               alt=""
-              class="w-full transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 group-hover:scale-110"
+              class="w-full transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 group-hover:scale-110 timelineanimation"
+              id="timelineanimationimage"
             />
             <figcaption class="text-center">Pierre Falcke, selvportræt</figcaption>
           </a>
@@ -73,7 +74,7 @@ import "../styles/tobii.min.css";
     </section>
   </article>
 
-  <section class="banner whitespace-nowrap overflow-x-hidden bg-gradient-to-r from-blue-300 to-blue-500 text-white py-2 sm:py-4 z-10">
+  <section id="banner" class="banner whitespace-nowrap overflow-x-hidden bg-gradient-to-r from-blue-300 to-blue-500 text-white py-2 sm:py-4 z-10">
     <div class="text-sm sm:text-base inline-block animate-infinite-scroll whitespace-nowrap [&_span]:mx-3 sm:[&_span]:mx-6">
       <span>Pierre sælger 2 millioner fotos om året</span>
       <span>Det svarer til én fotolicens hvert 16. sekund</span>
@@ -94,7 +95,7 @@ import "../styles/tobii.min.css";
       style="background-image: url('/arbejde.jpg')"
     >
       <div
-        class="cursor-handcursor w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md"
+        class="text-box cursor-handcursor w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md"
       >
         <h2 class="text-2xl font-bold">Hvad er stock-fotos?</h2>
         <p class="text-xl">
@@ -108,7 +109,7 @@ import "../styles/tobii.min.css";
       style="background-image: url('/apoteket.jpg')"
     >
       <p
-        class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md text-xl"
+        class="text-box w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md text-xl"
       >
         Stock-fotos bliver ofte kritiseret for at være uden sjæl - det er de der billeder af en læge i hvid kittel med stetoskop om halsen.
       </p>
@@ -119,7 +120,7 @@ import "../styles/tobii.min.css";
       style="background-image: url('/godt-arbejde.jpg')"
     >
       <p
-        class="w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md text-xl"
+        class="text-box w-3/4 lg:w-1/4 lg:ml-64 p-10 bg-white hover:bg-blue-500 hover:text-white hover:transition duration-300 bg-opacity-50 backdrop-blur-md text-xl"
       >
         Stock-fotos har eksisteret i mange år. Før branchen blev digital, tilbød stock-foto virksomhederne billedmapper, der kunne bestilles fra.
       </p>
@@ -169,7 +170,8 @@ import "../styles/tobii.min.css";
           <Image
             src={glitch}
             alt="glitch kunst"
-            class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 hover:scale-105"
+            class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 timelineanimation"
+            id="timelineanimationimage"
           />
           <figcaption>Glitch kunst</figcaption>
         </a>
@@ -179,7 +181,8 @@ import "../styles/tobii.min.css";
           <Image
             src={smena}
             alt="smena kunst"
-            class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 hover:scale-105"
+            class="image my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 timelineanimation"
+            id="timelineanimationimage"
           />
           <figcaption>Dobbelteksponering med Smena</figcaption>
         </a>
@@ -192,7 +195,7 @@ import "../styles/tobii.min.css";
       </p>
     </div>
   </section>
-  <section class="max-w-3xl mx-auto my-28 prose p-8 text-black">
+  <section id="eksperiment" class="max-w-3xl mx-auto my-28 prose p-8 text-black">
     <h2 class="text-4xl text-white">Fotoeksperimenter</h2>
     <div class="overflow-x-scroll">
       <ul class="flex md:h-[20vw] list-none sticky md:top-[10vh]">
@@ -243,7 +246,8 @@ import "../styles/tobii.min.css";
             <Image
               src={overouticm}
               alt=""
-              class="image my-0 transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 hover:scale-105"
+              class="image my-0 transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 timelineanimation"
+              id="timelineanimationimage"
             />
             <figcaption>Overeksponeret og ude af fokus</figcaption>
           </a>
@@ -253,14 +257,15 @@ import "../styles/tobii.min.css";
             <Image
               src={tyndfilm}
               alt=""
-              class="image my-0 transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 hover:scale-105"
+              class="image my-0 transition duration-300 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 timelineanimation"
+              id="timelineanimationimage"
             />
             <figcaption>Overeksponeret og ude af fokus</figcaption>
           </a>
         </div>
       </div>
     </div>
-    <div class="max-w-3xl mx-auto my-28 prose bg-gray-200 p-8">
+    <div id="kunst" class="max-w-3xl mx-auto my-28 prose bg-gray-200 p-8">
       <p>
         Karrieren begynder også så småt også at gå den rette vej: Pierre er begyndt at sælge fotokunst på nettet, og har udgivet sin første foto-bog
         med titlen “Lidt i fem,” som er en fotografisk odyssé om at slæbe en brandert hjem i de tidlige morgentimer. I forbindelse med udgivelsen af
@@ -276,7 +281,8 @@ import "../styles/tobii.min.css";
           <Image
             src={lidtifem}
             alt=""
-            class="my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 hover:scale-105"
+            class="my-0 hover:filter hover:sepia hover:saturate-200 hover:hue-rotate-180 transition duration-300 timelineanimation"
+            id="timelineanimationimage"
           />
           <figcaption>Lidt i fem - ny bog af Pierre Falcke</figcaption>
         </a>
@@ -289,10 +295,12 @@ import "../styles/tobii.min.css";
   const tobii = new Tobii();
 </script>
 <script>
-  import { animate, scroll, inView } from "motion";
+  import { animate, scroll, inView, timeline } from "motion";
 
+  /** Scroll Progress Bar */
   scroll(animate(".progress-bar", { scaleX: [0, 1] }));
 
+  /** Sticky Parallax Sections */
   scroll(animate(".stickyparallax1", { y: [-300, 0] }), {
     target: document.querySelector(".stickyparallax1"),
   });
@@ -301,5 +309,72 @@ import "../styles/tobii.min.css";
   });
   scroll(animate(".stickyparallax3", { y: [-300, 0] }), {
     target: document.querySelector(".stickyparallax3"),
+  });
+
+  /*Entrance Animation*/
+  animate("body", { opacity: [0, 1] }, { duration: 1 });
+
+  /** inView Animations */
+  const elementmedanimation1 = document.querySelector("#beroemmelse");
+  inView(elementmedanimation1, () => {
+    elementmedanimation1.classList.add("animate__animated", "animate__fadeInLeft");
+  });
+
+  const elementmedanimation2 = document.querySelector("#skillevej");
+  inView(elementmedanimation2, () => {
+    elementmedanimation2.classList.add("animate__animated", "animate__fadeInRight");
+  });
+
+  const elementmedanimation3 = document.querySelector("#nybegyndelse");
+  inView(elementmedanimation3, () => {
+    elementmedanimation3.classList.add("animate__animated", "animate__backInLeft");
+  });
+
+  const elementmedanimation4 = document.querySelector("#kunst");
+  inView(elementmedanimation4, () => {
+    elementmedanimation4.classList.add("animate__animated", "animate__backInRight");
+  });
+
+  const elementmedanimation5 = document.querySelector("#info");
+  inView(elementmedanimation5, () => {
+    elementmedanimation5.classList.add("animate__animated", "animate__rotateInDownLeft");
+  });
+
+  const elementmedanimation6 = document.querySelector("#stock");
+  inView(elementmedanimation6, () => {
+    elementmedanimation6.classList.add("animate__animated", "animate__rotateInDownRight");
+  });
+
+  const elementmedanimation7 = document.querySelector("#banner");
+  inView(elementmedanimation7, () => {
+    elementmedanimation7.classList.add("animate__animated", "animate__rotateInDownRight");
+  });
+
+  const elementmedanimation8 = document.querySelector("#h1");
+  inView(elementmedanimation8, () => {
+    elementmedanimation8.classList.add("animate__animated", "animate__lightSpeedInRight");
+  });
+
+  const elementmedanimation9 = document.querySelector("#h2");
+  inView(elementmedanimation9, () => {
+    elementmedanimation9.classList.add("animate__animated", "animate__lightSpeedInLeft");
+  });
+
+  const elementmedanimation10 = document.querySelector("#eksperiment");
+  inView(elementmedanimation10, () => {
+    elementmedanimation10.classList.add("animate__animated", "animate__bounceInDown");
+  });
+
+  /*Timeline*/
+  /* Timeline animation */
+  inView("#timelineanimationimage", () => {
+    const timelineanimation = [
+      [".timelineanimation", { opacity: 1 }, { duration: 5 }],
+      [".timelineanimation", { transform: "rotate(360deg)" }, { duration: 3 }],
+      [".timelineanimation", { transform: "scale(1.5)" }, { duration: 0.5 }],
+      [".timelineanimation", { transform: "scale(1)" }, { duration: 1 }],
+      [".timelineanimation", { opacity: 0.3 }, { duration: 5 }],
+    ];
+    timeline(timelineanimation);
   });
 </script>
